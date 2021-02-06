@@ -1,0 +1,20 @@
+// кнопка
+$btn-color: rgba(4, 195, 76, 1); // статичный
+$hover-btn-color: rgba(13, 168, 71, 1); // при наведении
+$active-btn-color: rgba(9, 122, 51, 1); // активная
+
+// цвет в случае если картинка не отрисуется
+$bg-color: rgba(137, 137, 137, 1);
+
+$footer-text: rgba(255, 245, 153, 1);
+
+
+// настройки картинки 
+@mixin bg-img-settings {
+  background: {
+    position: center center;
+    size: cover;
+    color: $bg-color;
+    repeat: no-repeat;
+  }
+}

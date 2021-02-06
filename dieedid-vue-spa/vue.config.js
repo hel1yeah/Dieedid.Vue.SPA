@@ -1,0 +1,29 @@
+// vue.config.js
+module.exports = {
+  // настройки...
+  publicPath: process.env.NODE_ENV === "production" ? "" : "/",
+
+  assetsDir: "dist",
+
+  productionSourceMap: false,
+
+  filenameHashing: true,
+};
+
+const path = require("path");
+module.exports = {
+  chainWebpack: (config) => {
+    const types = ["vue-modules", "vue", "normal-modules", "normal"];
+    types.forEach((type) =>
+      addStyleResource(config.module.rule("scss").oneOf(type))
+    );
+  },
+};
+function addStyleResource(rule) {
+  rule
+    .use("style-resource")
+    .loader("style-resources-loader")
+    .options({
+      patterns: [path.resolve(__dirname, "./src/assets/scss/vars.scss")],
+    });
+}
