@@ -44,7 +44,7 @@
 
 <script>
 export default {
-  name: "Footer",
+  name: "Footer"
 };
 </script>
 
@@ -71,8 +71,9 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 30px 100px 20px;
 
-  &__item  {
+  &__item {
     display: block;
     text-decoration: none;
     cursor: pointer;
@@ -83,9 +84,15 @@ footer {
     height: 27px;
   }
 }
-.social{
-    display: flex;
+.social {
+  display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.copyright {
+  color: $while;
+  font-weight: 300;
+  font-size: 12px;
+  padding: 7px 0 14px;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <section class="header__section">
+  <header class="header__section">
     <div class="container">
-      <header class="header">
+      <div class="header">
         <router-link to="/">
           <svg class="header__logo-dieedid">
             <use
@@ -10,9 +10,9 @@
           </svg>
         </router-link>
         <button class="header__button">ОТКРЫТЬ МОЮ ПРОГРАММУ</button>
-      </header>
+      </div>
     </div>
-  </section>
+  </header>
 </template>
 
 <script>
