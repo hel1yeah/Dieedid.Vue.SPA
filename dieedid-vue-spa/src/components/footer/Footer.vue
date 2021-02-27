@@ -51,6 +51,7 @@ export default {
 <style lang="scss">
 footer {
   background-color: rgba(2, 18, 11, 0.6);
+  flex-shrink: 0;
 }
 .wrapper__position {
   display: flex;
@@ -94,5 +95,6 @@ footer {
   font-weight: 300;
   font-size: 12px;
   padding: 7px 0 14px;
+  text-align: center;
 }
 </style>

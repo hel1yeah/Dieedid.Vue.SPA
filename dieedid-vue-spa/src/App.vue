@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <Header class="test" />
+      <div class="content">
+        <Header />
+        <div class="wrapper__inner">
+          <div class="content__inner">
+            sdfdsfsdfsdfwert rwe twer
+          </div>
 
-      <main class="main">
-        <div class="container">
           <Process />
         </div>
-      </main>
+      </div>
 
-      <Footer class="test2" />
+      <Footer />
     </div>
   </div>
 </template>
@@ -29,17 +32,28 @@ export default {
 </script>
 
 <style lang="scss">
+#app {
+  height: 100%;
+}
 .wrapper {
   background: url("./assets/images/first-bg.jpg");
   @include bg-img-settings;
+  min-height: 100%;
+  display: flex;
+  flex-flow: column;
 }
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  gap: 0px 0px;
+.content {
+  min-height: 100%;
+  flex: 1 0 auto;
 }
-.maine {
-  display: block;
+
+.wrapper__inner {
+  min-height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+.content__inner {
+  height: 100%;
+  flex: 1 0 auto;
 }
 </style>

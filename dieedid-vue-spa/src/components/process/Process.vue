@@ -1,13 +1,16 @@
 <template>
-  <section class="process">
-    <!-- <div class="process__position" v-for="name in section" :key="name">
-      <div class="process__dot">
-        <div class="process__dot--inner"></div>
+  <section class="process__wraper">
+    <div class="container">
+      <div class="process">
+        <div class="process__bar"></div>
+        <div class="process__position" v-for="name in section" :key="name">
+          <div class="process__dot"></div>
+          <div class="process__info">
+            {{ name }}
+          </div>
+        </div>
       </div>
-      <div class="process__info">
-        {{ name }}
-      </div>
-    </div> -->
+    </div>
   </section>
 </template>
 
@@ -31,13 +34,13 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  box-sizing: border-box;
+.process__wraper{
+flex-shrink: 0;
 }
-
 .process {
+  
   background: black;
-  width: 1100px;
+  width: 100%x;
   height: 100%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 80px;
@@ -45,45 +48,37 @@ export default {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-
+  position: relative;
+  z-index: 0;
+  &__bar {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    width: 90%;
+    height: 10px;
+    background-color: #fff;
+    z-index: -1;
+  }
   &__position {
-    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100px;
   }
   &__dot {
-    position: relative;
     box-sizing: border-box;
     width: 30px;
     height: 30px;
     margin: 0 0 15px;
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      background-color: #fff;
-      border: 1px solid red;
-      width: 150px;
-      height: 10px;
-    }
-    &--inner {
-      position: relative;
-      z-index: 5;
-      width: 30px;
-      height: 30px;
-      background-color: yellow;
-      border-radius: 50%;
-      border: 7px solid white;
-    }
+    background-color: #ffe713;
+    border: 7px solid white;
+    border-radius: 50%;
+    cursor: pointer;
   }
   &__info {
     text-align: center;
     color: white;
+    cursor: pointer;
   }
 }
 </style>
