@@ -8,9 +8,13 @@
           v-for="(screen, index) in section"
           :key="index"
         >
-          <div class="process__dot" @click="screenActive(index)"></div>
+          <div
+            class="process__dot"
+            @click="screenActive(index)"
+            :class="{ 'process__dot--active': screen.active }"
+          ></div>
           <div class="process__info">
-            {{ screen }}
+            {{ screen.name }}
           </div>
         </div>
       </div>
@@ -24,19 +28,47 @@ export default {
   data() {
     return {
       section: {
-        gender: "Пол",
-        physicalActivity: "Физическая активность",
-        physicalExercise: "Физические нагрузки",
-        bodyMassIndices: "Индексы массы тела",
-        allergy: "Аллергия",
-        personalData: "Личные  данные",
-        summary: "Сводка"
+        gender: {
+          name: "Пол",
+          active: false
+        },
+        physicalActivity: {
+          name: "Физическая активность",
+          active: false
+        },
+        physicalExercise: {
+          name: "Физические нагрузки",
+          active: false
+        },
+        bodyMassIndices: {
+          name: "Индексы массы тела",
+          active: false
+        },
+        allergy: {
+          name: "Аллергия",
+          active: false
+        },
+        personalData: {
+          name: "Личные  данные",
+          active: false
+        },
+        summary: {
+          name: "Сводка",
+          active: false
+        }
       }
     };
   },
   methods: {
-    screenActive(id) {
-      console.log(id);
+    screenActive(index) {
+      for (const key in this.section) {
+        if (Object.hasOwnProperty.call(this.section, key)) {
+          this.section[key].active = false;
+        }
+      }
+      this.section[index].active = true;
+      // console.log(this.section[index]);
+      console.log(this.section);
     }
   }
 };
@@ -79,10 +111,13 @@ export default {
     width: 30px;
     height: 30px;
     margin: 0 0 15px;
-    background-color: #ffe713;
+    background-color: white;
     border: 7px solid white;
     border-radius: 50%;
     cursor: pointer;
+    &.process__dot--active {
+      background-color: #ffe713;
+    }
   }
   &__info {
     text-align: center;
