@@ -3,13 +3,9 @@
     <div class="wrapper">
       <div class="content">
         <Header />
-        <div class="wrapper__inner">
-          <div class="content__inner">
-            sdfdsfsdfsdfwert rwe twer
-          </div>
-
-          <Process />
-        </div>
+        <Gender />
+        <PhysicalActivity />
+        <Process />
       </div>
 
       <Footer />
@@ -21,12 +17,16 @@
 import Header from "@/components/header/Header.vue";
 import Footer from "@/components/footer/Footer.vue";
 import Process from "@/components/process/Process.vue";
+import Gender from "@/components/screens/Gender.vue";
+import PhysicalActivity from "@/components/screens/PhysicalActivity.vue";
 
 export default {
   components: {
     Header,
     Footer,
-    Process
+    Process,
+    Gender,
+    PhysicalActivity
   }
 };
 </script>

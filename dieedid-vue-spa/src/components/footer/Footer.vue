@@ -65,7 +65,7 @@ footer {
     style: normal;
     weight: normal;
   }
-  color: $footer-text;
+  color: $gold;
   text-decoration-line: underline;
   width: 100%;
   padding: 0 100px;

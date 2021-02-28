@@ -3,10 +3,14 @@
     <div class="container">
       <div class="process">
         <div class="process__bar"></div>
-        <div class="process__position" v-for="name in section" :key="name">
-          <div class="process__dot"></div>
+        <div
+          class="process__position"
+          v-for="(screen, index) in section"
+          :key="index"
+        >
+          <div class="process__dot" @click="screenActive(index)"></div>
           <div class="process__info">
-            {{ name }}
+            {{ screen }}
           </div>
         </div>
       </div>
@@ -19,26 +23,31 @@ export default {
   name: "Process",
   data() {
     return {
-      section: [
-        "Пол",
-        "Физическая активность",
-        "Физические нагрузки",
-        "Индексы массы тела",
-        "Аллергия",
-        "Личные  данные",
-        "Сводка"
-      ]
+      section: {
+        gender: "Пол",
+        physicalActivity: "Физическая активность",
+        physicalExercise: "Физические нагрузки",
+        bodyMassIndices: "Индексы массы тела",
+        allergy: "Аллергия",
+        personalData: "Личные  данные",
+        summary: "Сводка"
+      }
     };
+  },
+  methods: {
+    screenActive(id) {
+      console.log(id);
+    }
   }
 };
 </script>
 
 <style lang="scss">
-.process__wraper{
-flex-shrink: 0;
+.process__wraper {
+  margin: 70px 0 30px;
+  flex-shrink: 0;
 }
 .process {
-  
   background: black;
   width: 100%x;
   height: 100%;

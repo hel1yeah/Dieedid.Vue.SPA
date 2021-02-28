@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style lang="scss">
+.header__section {
+  margin: 34px 0 0;
+}
 .header {
   display: flex;
   align-items: center;
