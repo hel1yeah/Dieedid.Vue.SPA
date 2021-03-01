@@ -53,7 +53,7 @@ export default {
       left: 28%;
       background-image: url("../../assets/images/woman-salad.png");
       background-size: contain;
-      z-index: 2;
+      // z-index: -1;
     }
     &--header {
     }
@@ -98,6 +98,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  &:active,
+  &:focus {
+    outline: transparent;
+  }
 }
 .btn-gender--male {
   background: linear-gradient(180deg, #4383be 0%, #2b56a9 100%);

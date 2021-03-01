@@ -13,7 +13,7 @@
             @click="screenActive(index)"
             :class="{ 'process__dot--active': screen.active }"
           ></div>
-          <div class="process__info">
+          <div class="process__info" @click="screenActive(index)">
             {{ screen.name }}
           </div>
         </div>
@@ -25,50 +25,26 @@
 <script>
 export default {
   name: "Process",
+  props: {
+    section: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
-    return {
-      section: {
-        gender: {
-          name: "Пол",
-          active: false
-        },
-        physicalActivity: {
-          name: "Физическая активность",
-          active: false
-        },
-        physicalExercise: {
-          name: "Физические нагрузки",
-          active: false
-        },
-        bodyMassIndices: {
-          name: "Индексы массы тела",
-          active: false
-        },
-        allergy: {
-          name: "Аллергия",
-          active: false
-        },
-        personalData: {
-          name: "Личные  данные",
-          active: false
-        },
-        summary: {
-          name: "Сводка",
-          active: false
-        }
-      }
-    };
+    return {};
   },
   methods: {
     screenActive(index) {
       for (const key in this.section) {
         if (Object.hasOwnProperty.call(this.section, key)) {
-          this.section[key].active = false;
+          if (this.section[key].active) {
+            this.section[key].active = false;
+          }
         }
       }
       this.section[index].active = true;
-      // console.log(this.section[index]);
-      console.log(this.section);
+      this.$emit("processSection", this.section);
     }
   }
 };

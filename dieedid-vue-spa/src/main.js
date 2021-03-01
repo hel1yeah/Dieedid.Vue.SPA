@@ -3,6 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+import "../node_modules/normalize-scss/sass/_normalize.scss";
+
 import "./assets/scss/main.scss";
 
 Vue.config.productionTip = false;

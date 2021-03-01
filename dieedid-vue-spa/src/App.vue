@@ -3,9 +3,9 @@
     <div class="wrapper">
       <div class="content">
         <Header />
-        <Gender />
-        <PhysicalActivity />
-        <Process />
+        <Gender v-if="this.section.gender.active" />
+        <PhysicalActivity v-if="this.section.physicalActivity.active" />
+        <Process @processSection="addInfo" :section="section" />
       </div>
 
       <Footer />
@@ -27,6 +27,52 @@ export default {
     Process,
     Gender,
     PhysicalActivity
+  },
+  data() {
+    return {
+      section: {
+        gender: {
+          name: "Пол",
+          active: false,
+          id: 0
+        },
+        physicalActivity: {
+          name: "Физическая активность",
+          active: true,
+          id: 1
+        },
+        physicalExercise: {
+          name: "Физические нагрузки",
+          active: false,
+          id: 2
+        },
+        bodyMassIndices: {
+          name: "Индексы массы тела",
+          active: false,
+          id: 3
+        },
+        allergy: {
+          name: "Аллергия",
+          active: false,
+          id: 4
+        },
+        personalData: {
+          name: "Личные  данные",
+          active: false,
+          id: 5
+        },
+        summary: {
+          name: "Сводка",
+          active: false,
+          id: 6
+        }
+      }
+    };
+  },
+  methods: {
+    addInfo(section) {
+      this.section = section;
+    }
   }
 };
 </script>
