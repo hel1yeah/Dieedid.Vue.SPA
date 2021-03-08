@@ -27,6 +27,7 @@ export default {
   height: 50px;
   background-color: transparent;
   text-transform: lowercase;
+  margin: auto 0 40px;
 
   display: flex;
   align-items: center;

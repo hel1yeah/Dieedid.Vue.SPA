@@ -5,6 +5,7 @@
         <Header />
         <Gender v-if="this.section.gender.active" />
         <PhysicalActivity v-if="this.section.physicalActivity.active" />
+        
         <Process @processSection="addInfo" :section="section" />
       </div>
 

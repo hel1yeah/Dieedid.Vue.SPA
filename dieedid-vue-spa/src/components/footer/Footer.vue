@@ -91,7 +91,7 @@ footer {
   justify-content: space-between;
 }
 .copyright {
-  color: $while;
+  color: $white;
   font-weight: 300;
   font-size: 12px;
   padding: 7px 0 14px;

@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss">
 .process__wraper {
-  margin: 70px 0 30px;
+  margin: 0 0 30px;
   flex-shrink: 0;
 }
 .process {

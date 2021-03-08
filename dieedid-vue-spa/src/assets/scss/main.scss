@@ -1,3 +1,4 @@
-@import "./fonts.scss"; // шрифты
-@import "./global.scss"; // стили касающийся всего проека
-@import "./vars.scss"; // переменные
+@import './_normalize.scss';
+@import "./_fonts.scss"; // шрифты
+@import "./_vars.scss"; // переменные
+@import "./_global.scss"; // стили касающийся всего проека

@@ -40,7 +40,7 @@ export default {
     width: 205px;
     border-radius: 20px;
     border: transparent;
-    color: white;
+    color: &white;
     background: #20c05c;
     cursor: pointer;
     outline: transparent;

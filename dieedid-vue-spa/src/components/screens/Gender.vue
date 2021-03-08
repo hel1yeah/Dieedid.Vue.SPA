@@ -37,7 +37,7 @@ export default {
 
 <style lang="scss">
 .gender {
-  margin: 42px 0 104px;
+  margin: 42px 0 42px;
   z-index: 0;
   &__inner {
     display: flex;
