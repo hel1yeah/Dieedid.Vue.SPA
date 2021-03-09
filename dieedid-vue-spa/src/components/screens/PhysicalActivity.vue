@@ -2,7 +2,10 @@
   <section class="physical__activity">
     <div class="container">
       <div class="physical__activity--inner">
-        <h2 class="physical__activity--title">Физическая активность</h2>
+        <h2 class="main__text">
+          Физическая активность
+          <Question :description="description" />
+        </h2>
         <p class="physical__activity--descr">Исключая тренировки</p>
         <div class="physical__activity-button--wrapper">
           <ButtonBack />
@@ -26,11 +29,13 @@
 <script>
 import ButtonBack from "@/components/repeat/ButtonBack.vue";
 import Help from "@/components/repeat/Help.vue";
+import Question from "@/components/repeat/Question.vue";
 export default {
   name: "PhysicalActivity",
   components: {
     ButtonBack,
-    Help
+    Help,
+    Question
   },
   data() {
     return {
@@ -46,7 +51,9 @@ export default {
           id: 1
         },
         heavy: { name: "тяжёлый физический труд", active: false, id: 1 }
-      }
+      },
+      description:
+        "Ваш образ жизни существенное влияет на количество пищи, включенной в вашу индивидуальную программу питания. Если вы не можете найти точный ответ, выберите тот, который наиболее точно соответствует вашему типичному дню."
     };
   }
 };
@@ -65,10 +72,7 @@ export default {
     background-size: contain;
     background-repeat: no-repeat;
   }
-  &--title {
-    font-size: 4.0556rem;
-    margin: 0 0 20px;
-  }
+
   &--descr {
     font-size: 1.3333rem;
     margin: 0 0 55px;
@@ -81,6 +85,7 @@ export default {
 }
 .physical__activity--buttons {
   width: 800px;
+  margin: 0 0 90px;
 }
 .activity--button {
   color: $active-btn-color;
@@ -99,5 +104,11 @@ export default {
     background-color: $hover-btn-color;
     color: $white;
   }
+}
+.main__text {
+  display: inline-block;
+  font-size: 4.0556rem;
+  margin: 0 auto 20px;
+  position: relative;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <div class="help-back">
-    <svg class="help-back__img">
+  <div class="help">
+    <svg class="help__img">
       <use xlink:href="../../assets/images/sprite/sprite.svg#question"></use>
     </svg>
-    <div class="help-back__text">
+    <div class="help__text">
       Help
     </div>
   </div>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-.help-back {
+.help {
   color: $gold;
   border: 1px solid $gold;
   border-radius: 15px;
