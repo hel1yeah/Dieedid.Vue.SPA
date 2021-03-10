@@ -1,9 +1,8 @@
 // кнопка
-$btn-color: rgba(4, 195, 76, 1); // статичный 
+$btn-color: rgba(4, 195, 76, 1); // статичный
 
 $hover-btn-color: rgba(13, 168, 71, 1); // при наведении
 $active-btn-color: rgba(9, 122, 51, 1); // активная и текст не активный
-
 
 // цвет в случае если картинка не отрисуется
 $bg-color: rgba(137, 137, 137, 1);
@@ -14,8 +13,11 @@ $white: rgba(255, 255, 255, 1);
 
 $bg-progres: rgba(8, 17, 35, 1);
 
+$transition: all 0.5s ease-out;
 
-// настройки картинки 
+$shadow: 0px 0px 9px 0px $gold;
+
+// настройки картинки
 @mixin bg-img-settings {
   background: {
     position: center center;

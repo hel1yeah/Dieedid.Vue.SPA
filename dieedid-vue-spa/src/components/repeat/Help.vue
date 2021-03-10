@@ -31,8 +31,11 @@ export default {
   justify-content: center;
   margin: auto 0 40px;
   background: rgba(26, 23, 23, 0.5);
-
   cursor: pointer;
+  transition: $transition;
+  &:hover {
+    box-shadow: $shadow;
+  }
   &:active,
   &:focus {
     outline: transparent;

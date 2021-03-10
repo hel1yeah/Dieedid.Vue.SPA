@@ -1,17 +1,16 @@
 <template>
-  <section class="physical__activity">
+  <section class="physical__exercise">
     <div class="container">
-      <div class="physical__activity--inner">
+      <div class="physical__exercise--inner">
         <h2 class="main__text">
-          Физическая активность
-          <Question :description="description" />
+          Физические нагрузки
+          <Question />
         </h2>
-        <p class="physical__activity--descr">Исключая тренировки</p>
-        <div class="physical__activity-button--wrapper">
+        <div class="physical__exercise-button--wrapper">
           <ButtonBack />
-          <div class="physical__activity--buttons">
+          <div class="physical__exercise--buttons">
             <div
-              v-for="(act, index) in activity"
+              v-for="(act, index) in xercise"
               :key="index"
               class="activity--button"
             >
@@ -24,14 +23,13 @@
     </div>
   </section>
 </template>
-
 <script>
 import ButtonBack from "@/components/repeat/ButtonBack.vue";
 import Help from "@/components/repeat/Help.vue";
 import Question from "@/components/repeat/Question.vue";
 
 export default {
-  name: "PhysicalActivity",
+  name: "PhysicalExercise",
   components: {
     ButtonBack,
     Help,
@@ -39,18 +37,19 @@ export default {
   },
   data() {
     return {
-      activity: {
-        sedentaryWork: {
-          name: "работа в офисе / сижу дома",
+      xercise: {
+        minimum: {
+          name: "минимумили полное отсутствие",
           active: false,
           id: 1
         },
-        walks: {
-          name: "лёгкий физический труд / частые прогулки",
+        small: {
+          name: "небольшое 1-3 раза в неделю",
           active: false,
           id: 2
         },
-        heavy: { name: "тяжёлый физический труд", active: false, id: 3 }
+        normal: { name: "3-5 раз в неделю", active: false, id: 3 },
+        everyday: { name: "каждый день", active: false, id: 4 }
       },
       description:
         "Ваш образ жизни существенное влияет на количество пищи, включенной в вашу индивидуальную программу питания. Если вы не можете найти точный ответ, выберите тот, который наиболее точно соответствует вашему типичному дню."
@@ -60,33 +59,21 @@ export default {
 </script>
 
 <style lang="scss">
-.physical__activity {
-  font-family: "Roboto Condensed", sans-serif;
-  text-align: center;
-  color: $gold;
-  text-transform: uppercase;
-  margin: 30px 0 -10px;
-
+.physical__exercise {
   &--inner {
-    background-image: url("./../../assets/images/physical-activity.png");
-    background-position: bottom right;
+    background-image: url("./../../assets/images/man-woman.png");
+    background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
   }
-
-  &--descr {
-    font-size: 1.3333rem;
-    margin: 0 0 55px;
+  &--buttons {
+    width: 800px;
+    margin: 0 0 90px;
   }
 }
-.physical__activity-button--wrapper {
+.physical__exercise-button--wrapper {
   display: flex;
   justify-content: space-between;
   padding: 0 30px;
-  // margin: 0 0 -40px;
-}
-.physical__activity--buttons {
-  width: 800px;
-  margin: 0 0 90px;
 }
 </style>

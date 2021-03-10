@@ -5,7 +5,7 @@
         <Header />
         <Gender v-if="this.section.gender.active" />
         <PhysicalActivity v-if="this.section.physicalActivity.active" />
-        
+        <PhysicalExercise v-if="this.section.physicalExercise.active" />
         <Process @processSection="addInfo" :section="section" />
       </div>
 
@@ -20,6 +20,7 @@ import Footer from "@/components/footer/Footer.vue";
 import Process from "@/components/process/Process.vue";
 import Gender from "@/components/screens/Gender.vue";
 import PhysicalActivity from "@/components/screens/PhysicalActivity.vue";
+import PhysicalExercise from "@/components/screens/PhysicalExercise.vue";
 
 export default {
   components: {
@@ -27,7 +28,8 @@ export default {
     Footer,
     Process,
     Gender,
-    PhysicalActivity
+    PhysicalActivity,
+    PhysicalExercise
   },
   data() {
     return {
@@ -39,12 +41,12 @@ export default {
         },
         physicalActivity: {
           name: "Физическая активность",
-          active: true,
+          active: false,
           id: 1
         },
         physicalExercise: {
           name: "Физические нагрузки",
-          active: false,
+          active: true,
           id: 2
         },
         bodyMassIndices: {

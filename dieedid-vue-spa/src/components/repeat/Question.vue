@@ -1,10 +1,10 @@
 <template>
   <div class="question__position">
-    <div class="question" v-on:click.stop="descriptionShow">
+    <div class="question" @:click.stop="descriptionShow">
       <svg class="help__img">
         <use xlink:href="../../assets/images/sprite/sprite.svg#question"></use>
       </svg>
-      <div class="question__description" v-show="this.descriptionInfo" >
+      <div class="question__description" v-show="this.descriptionInfo">
         {{ description }}
       </div>
     </div>
@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      descriptionInfo: true
+      descriptionInfo: false
     };
   },
   methods: {
@@ -39,6 +39,11 @@ export default {
   position: relative;
   display: flex;
   cursor: pointer;
+  border-radius: 50%;
+  transition: $transition;
+  &:hover {
+    box-shadow: $shadow;
+  }
   &__position {
     position: absolute;
     top: -8px;

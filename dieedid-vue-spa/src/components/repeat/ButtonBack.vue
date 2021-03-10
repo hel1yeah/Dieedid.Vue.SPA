@@ -34,6 +34,11 @@ export default {
   justify-content: center;
 
   cursor: pointer;
+
+  transition: $transition;
+  &:hover {
+    box-shadow: $shadow;
+  }
   &:active,
   &:focus {
     outline: transparent;
