@@ -1,6 +1,6 @@
 <template>
   <div class="question__position">
-    <div class="question" @:click.stop="descriptionShow">
+    <div class="question" @click.stop="descriptionShow">
       <svg class="help__img">
         <use xlink:href="../../assets/images/sprite/sprite.svg#question"></use>
       </svg>

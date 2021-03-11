@@ -6,6 +6,7 @@
         <Gender v-if="this.section.gender.active" />
         <PhysicalActivity v-if="this.section.physicalActivity.active" />
         <PhysicalExercise v-if="this.section.physicalExercise.active" />
+        <BodyMassIndex v-if="this.section.bodyMassIndex.active" />
         <Process @processSection="addInfo" :section="section" />
       </div>
 
@@ -21,6 +22,7 @@ import Process from "@/components/process/Process.vue";
 import Gender from "@/components/screens/Gender.vue";
 import PhysicalActivity from "@/components/screens/PhysicalActivity.vue";
 import PhysicalExercise from "@/components/screens/PhysicalExercise.vue";
+import BodyMassIndex from "@/components/screens/BodyMassIndex.vue";
 
 export default {
   components: {
@@ -29,7 +31,8 @@ export default {
     Process,
     Gender,
     PhysicalActivity,
-    PhysicalExercise
+    PhysicalExercise,
+    BodyMassIndex
   },
   data() {
     return {
@@ -46,12 +49,12 @@ export default {
         },
         physicalExercise: {
           name: "Физические нагрузки",
-          active: true,
+          active: false,
           id: 2
         },
-        bodyMassIndices: {
+        bodyMassIndex: {
           name: "Индексы массы тела",
-          active: false,
+          active: true,
           id: 3
         },
         allergy: {
@@ -59,15 +62,20 @@ export default {
           active: false,
           id: 4
         },
+        objective: {
+          name: "Цели",
+          active: false,
+          id: 5
+        },
         personalData: {
           name: "Личные  данные",
           active: false,
-          id: 5
+          id: 6
         },
         summary: {
           name: "Сводка",
           active: false,
-          id: 6
+          id: 7
         }
       }
     };

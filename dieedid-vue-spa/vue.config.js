@@ -6,7 +6,7 @@ module.exports = {
   assetsDir: "app",
   productionSourceMap: false,
   filenameHashing: true,
-  //////////////
+
   chainWebpack: config => {
     const types = ["vue-modules", "vue", "normal-modules", "normal"];
     types.forEach(type =>
@@ -14,6 +14,8 @@ module.exports = {
     );
   }
 };
+
+// доступ из любого компонента к переменным scss
 const path = require("path");
 function addStyleResource(rule) {
   rule

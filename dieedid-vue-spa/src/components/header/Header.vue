@@ -2,10 +2,10 @@
   <header class="header__section">
     <div class="container">
       <div class="header">
-        <router-link to="/">
+        <router-link to="#">
           <svg class="header__logo-dieedid">
             <use
-              xlink:href="../../assets/images/sprite/sprite.svg#logo-dieedid"
+              xlink:href="@/assets/images/sprite/sprite.svg#logo-dieedid"
             ></use>
           </svg>
         </router-link>

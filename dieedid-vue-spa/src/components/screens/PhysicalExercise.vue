@@ -4,7 +4,7 @@
       <div class="physical__exercise--inner">
         <h2 class="main__text">
           Физические нагрузки
-          <Question />
+          <Question :description="description" />
         </h2>
         <div class="physical__exercise-button--wrapper">
           <ButtonBack />
@@ -52,7 +52,7 @@ export default {
         everyday: { name: "каждый день", active: false, id: 4 }
       },
       description:
-        "Ваш образ жизни существенное влияет на количество пищи, включенной в вашу индивидуальную программу питания. Если вы не можете найти точный ответ, выберите тот, который наиболее точно соответствует вашему типичному дню."
+        "Существует множество косвенных доказательств, указывающих на то, что физически активные люди имеют больше шансов дожить до биологического предела своей жизни (для большинства людей это, по всей видимости, около 83–87 лет)."
     };
   }
 };
@@ -60,6 +60,11 @@ export default {
 
 <style lang="scss">
 .physical__exercise {
+  font-family: "Roboto Condensed", sans-serif;
+  text-align: center;
+  color: $gold;
+  text-transform: uppercase;
+  margin: 30px 0 -10px;
   &--inner {
     background-image: url("./../../assets/images/man-woman.png");
     background-position: center center;
