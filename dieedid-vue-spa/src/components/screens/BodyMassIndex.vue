@@ -8,16 +8,10 @@
         </h2>
         <div class="body-mass-index-button--wrapper">
           <ButtonBack />
-          <div class="body-mass-index--buttons">
-            
-          </div>
-          <div class="body-mass-index--buttons">
-            
-          </div>
-          <div class="body-mass-index--buttons">
-            
-          </div>
-
+          <div class="body-mass-index--buttons"></div>
+          <div class="body-mass-index--buttons"></div>
+          <div class="body-mass-index--buttons"></div>
+          <IndexCalendar />
           <Help />
         </div>
       </div>
@@ -26,12 +20,18 @@
 </template>
 
 <script>
+import ButtonBack from "@/components/repeat/ButtonBack.vue";
+import Help from "@/components/repeat/Help.vue";
 import Question from "@/components/repeat/Question.vue";
+import IndexCalendar from "@/components/calendar/IndexCalendar.vue";
 
 export default {
   name: "BodyMassIndex",
   components: {
-    Question
+    Question,
+    Help,
+    ButtonBack,
+    IndexCalendar
   },
   data() {
     return {
