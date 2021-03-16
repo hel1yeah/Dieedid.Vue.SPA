@@ -81,8 +81,8 @@ export default {
     };
   },
   methods: {
-    addInfo(section) {
-      this.section = section;
+    addInfo(processSection) {
+      this.section = processSection;
     }
   }
 };
