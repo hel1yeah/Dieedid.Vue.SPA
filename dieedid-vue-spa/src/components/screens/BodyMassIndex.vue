@@ -9,17 +9,7 @@
         <div class="body-mass-index__button__wrapper">
           <ButtonBack />
           <div class="body-mass-index__button__inner">
-            <div class="activity--button body-mass-index__buttons">
-              <!-- <svg class="calendar__img">
-                <use
-                  xlink:href="../../assets/images/sprite/sprite.svg#calendar"
-                ></use>
-              </svg> -->
-              <!-- <input type="text" v-model="inputData" /> -->
-              <div class="index__calendar__wrapper">
                 <IndexCalendar />
-              </div>
-            </div>
             <div class="activity--button body-mass-index__buttons"></div>
             <div class="activity--button body-mass-index__buttons"></div>
           </div>

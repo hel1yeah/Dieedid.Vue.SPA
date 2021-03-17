@@ -1,27 +1,22 @@
 <template>
-  <div class="calendar" data-app>
-    <v-menu
-      :absolute="true"
-      v-model="menu"
-      :lose-on-click="true"
-      :close-on-content-click="true"
-      transition="scale-transition"
-      min-width="290px"
-      
-      
-    >
-      <template v-slot:activator="{ on }">
-        <v-text-field v-model="date" readonly v-on="on"></v-text-field>
-      </template>
+  <div class="calendar" @click="menu = !menu">
+    <div class="activity--button calendar__age">
+      <svg class="calendar__icon">
+        <use xlink:href="../../assets/images/sprite/sprite.svg#calendar"></use>
+      </svg>
 
-      <div class="test">
-        <v-date-picker
-          v-model="date"
-          :header-color="grean"
-          @input="menu = false"
-        ></v-date-picker>
-      </div>
-    </v-menu>
+      <div class="calendar__text-field">{{ date }}</div>
+    </div>
+
+    <div class="date-picker__position" v-if="menu">
+      <v-date-picker
+        v-if="menu"
+        v-model="date"
+        :color="grean"
+        :scrollable="true"
+        width="250"
+      ></v-date-picker>
+    </div>
   </div>
 </template>
 
@@ -30,25 +25,47 @@ export default {
   name: "IndexCalendar",
   data() {
     return {
-      // date: "2021-03-12",
       grean: "rgba(13, 168, 71, 1)",
       date: new Date().toISOString().substr(0, 10),
       menu: false,
       modal: false
     };
+  },
+  methods: {
+    test() {}
   }
 };
 </script>
 
 <style lang="scss">
 .calendar {
+  position: relative;
+  &__icon {
+    width: 32px;
+    height: 32px;
+    margin: 0 40px 0 0;
+
+    fill: firebrick;
+  }
+  &__age {
+    display: flex;
+    color: $hover-btn-color;
+  }
 }
-.v-menu__content .theme--light .menuable__content__active {
+.date-picker__position {
+  position: absolute;
   top: 0;
-  right: -305px;
+  right: -270px;
+  z-index: 55;
 }
-// .v-picker v-card.v-picker--date.theme--light {
-//   top: 0px;
-//   right: -305px;
-// }
+.text-field {
+}
+.v-picker.v-card.v-picker--date.theme--light {
+  border-radius: 10px;
+}
+.v-date-picker-table {
+  position: relative;
+  padding: 0 12px;
+  height: 200px;
+}
 </style>
