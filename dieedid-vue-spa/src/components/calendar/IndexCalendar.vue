@@ -1,6 +1,6 @@
 <template>
-  <div class="calendar" @click="menu = !menu">
-    <div class="activity--button calendar__age">
+  <div class="calendar">
+    <div class="activity--button calendar__age" @click="menu = !menu">
       <svg class="calendar__icon">
         <use xlink:href="../../assets/images/sprite/sprite.svg#calendar"></use>
       </svg>
@@ -8,7 +8,7 @@
       <div class="calendar__text-field">{{ date }}</div>
     </div>
 
-    <div class="date-picker__position" v-if="menu">
+    <div class="date-picker__position">
       <v-date-picker
         v-if="menu"
         v-model="date"
@@ -40,16 +40,23 @@ export default {
 <style lang="scss">
 .calendar {
   position: relative;
+
   &__icon {
     width: 32px;
     height: 32px;
     margin: 0 40px 0 0;
-
-    fill: firebrick;
+    fill: $hover-btn-color;
+    transition: 0.2s;
+    &:hover {
+      fill: $white;
+    }
   }
   &__age {
     display: flex;
     color: $hover-btn-color;
+    &:hover .calendar__icon {
+      fill: $white;
+    }
   }
 }
 .date-picker__position {
