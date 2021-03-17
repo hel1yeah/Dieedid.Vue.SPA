@@ -1,25 +1,26 @@
 <template>
   <div class="calendar" data-app>
     <v-menu
-      absolute="true"
+      :absolute="true"
       v-model="menu"
       :lose-on-click="true"
       :close-on-content-click="true"
       transition="scale-transition"
       min-width="290px"
-      position-x="0"
-      position-y="0"
-      offset-x="0"
+      
+      
     >
       <template v-slot:activator="{ on }">
         <v-text-field v-model="date" readonly v-on="on"></v-text-field>
       </template>
 
-      <v-date-picker
-        v-model="date"
-        :header-color="grean"
-        @input="menu = false"
-      ></v-date-picker>
+      <div class="test">
+        <v-date-picker
+          v-model="date"
+          :header-color="grean"
+          @input="menu = false"
+        ></v-date-picker>
+      </div>
     </v-menu>
   </div>
 </template>
