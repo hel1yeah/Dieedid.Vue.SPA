@@ -6,18 +6,13 @@
           Индекс массы тела
           <Question :description="description" />
         </h2>
-        <div class="body-mass-index-button--wrapper">
+        <div class="body-mass-index__button__wrapper">
           <ButtonBack />
-          <div class="body-mass-index--buttons">
-            
+          <div class="body-mass-index__button__inner">
+                <IndexCalendar />
+            <div class="activity--button body-mass-index__buttons"></div>
+            <div class="activity--button body-mass-index__buttons"></div>
           </div>
-          <div class="body-mass-index--buttons">
-            
-          </div>
-          <div class="body-mass-index--buttons">
-            
-          </div>
-
           <Help />
         </div>
       </div>
@@ -26,15 +21,22 @@
 </template>
 
 <script>
+import ButtonBack from "@/components/repeat/ButtonBack.vue";
+import Help from "@/components/repeat/Help.vue";
 import Question from "@/components/repeat/Question.vue";
+import IndexCalendar from "@/components/calendar/IndexCalendar.vue";
 
 export default {
   name: "BodyMassIndex",
   components: {
-    Question
+    Question,
+    Help,
+    ButtonBack,
+    IndexCalendar
   },
   data() {
     return {
+      inputData: "21-03-13",
       description:
         "Индекс массы тела - величина, позволяющая оценить степень соответствия массы человека и его роста и тем самым косвенно судить о том, является ли масса недостаточной, нормальной или избыточной. Важен при определении показаний для необходимости лечения."
     };
@@ -42,4 +44,34 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.body-mass-index {
+  &__inner {
+  }
+  &__buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__button__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__button__inner {
+    width: 800px;
+    margin: 0 0 90px;
+  }
+}
+
+.index__calendar__wrapper {
+}
+.body-mass-index--buttons {
+  border-radius: 25px;
+}
+.calendar__img {
+  width: 63px;
+  height: 65px;
+  padding: 10px;
+  margin: 0 100px 0 0;
+}
+</style>

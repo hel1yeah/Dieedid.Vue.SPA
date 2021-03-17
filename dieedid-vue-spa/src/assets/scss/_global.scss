@@ -32,11 +32,12 @@ html {
 
 // кнопки выбора на всех страницах
 .activity--button {
+  position: relative;
   text-align: center;
   color: $active-btn-color;
   background-color: $white;
   border-radius: 25px;
-  padding: 25px 0;
+  padding: 25px 40px;
   margin: 0 0 40px;
   width: 100%;
   text-transform: uppercase;
