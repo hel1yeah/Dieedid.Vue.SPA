@@ -2,7 +2,7 @@
   <div class="calendar">
     <div class="activity--button calendar__age" @click="menu = !menu">
       <svg class="calendar__icon">
-        <use xlink:href="../../assets/images/sprite/sprite.svg#calendar"></use>
+        <use xlink:href="@/assets/images/sprite/sprite.svg#calendar"></use>
       </svg>
 
       <div class="calendar__text-field">{{ date }}</div>
@@ -65,14 +65,10 @@ export default {
   right: -270px;
   z-index: 55;
 }
-.text-field {
-}
 .v-picker.v-card.v-picker--date.theme--light {
   border-radius: 10px;
 }
-.v-date-picker-table {
-  position: relative;
-  padding: 0 12px;
+.v-date-picker-table.v-date-picker-table--date.theme--light {
   height: 200px;
 }
 </style>

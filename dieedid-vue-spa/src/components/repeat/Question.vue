@@ -41,6 +41,7 @@ export default {
   cursor: pointer;
   border-radius: 50%;
   transition: $transition;
+  z-index: 333;
   &:hover {
     box-shadow: $shadow;
   }

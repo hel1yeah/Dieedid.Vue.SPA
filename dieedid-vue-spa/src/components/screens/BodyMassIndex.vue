@@ -9,7 +9,7 @@
         <div class="body-mass-index__button__wrapper">
           <ButtonBack />
           <div class="body-mass-index__button__inner">
-                <IndexCalendar />
+            <IndexCalendar />
             <div class="activity--button body-mass-index__buttons"></div>
             <div class="activity--button body-mass-index__buttons"></div>
           </div>
@@ -24,7 +24,7 @@
 import ButtonBack from "@/components/repeat/ButtonBack.vue";
 import Help from "@/components/repeat/Help.vue";
 import Question from "@/components/repeat/Question.vue";
-import IndexCalendar from "@/components/calendar/IndexCalendar.vue";
+import IndexCalendar from "@/components/BodyMassIndexButtons/IndexCalendar.vue";
 
 export default {
   name: "BodyMassIndex",
@@ -47,6 +47,7 @@ export default {
 <style lang="scss">
 .body-mass-index {
   &__inner {
+    width: 100%;
   }
   &__buttons {
     display: flex;
@@ -61,9 +62,6 @@ export default {
     width: 800px;
     margin: 0 0 90px;
   }
-}
-
-.index__calendar__wrapper {
 }
 .body-mass-index--buttons {
   border-radius: 25px;
