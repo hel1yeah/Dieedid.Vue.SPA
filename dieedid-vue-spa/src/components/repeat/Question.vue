@@ -47,8 +47,8 @@ export default {
   }
   &__position {
     position: absolute;
-    top: -8px;
-    right: -11px;
+    top: -11px;
+    right: -35px;
   }
   &__description {
     position: absolute;
