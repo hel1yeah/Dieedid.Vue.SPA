@@ -38,12 +38,14 @@ export default {
 </script>
 
 <style lang="scss">
+
+
 .calendar {
   position: relative;
 
   &__icon {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
     margin: 0 40px 0 0;
     fill: $hover-btn-color;
     transition: 0.2s;

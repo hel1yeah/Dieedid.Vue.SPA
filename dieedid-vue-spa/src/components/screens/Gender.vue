@@ -37,7 +37,7 @@ export default {
 
 <style lang="scss">
 .gender {
-  margin: 42px 0 42px;
+  margin: 42px 0 100px;
   z-index: 0;
   &__inner {
     display: flex;
@@ -49,7 +49,7 @@ export default {
       position: absolute;
       width: 840px;
       height: 690px;
-      top: -27px;
+      top: -10px;
       left: 28%;
       background-image: url("../../assets/images/woman-salad.png");
       background-size: contain;

@@ -17,6 +17,10 @@ $transition: all 0.5s ease-out;
 
 $shadow: 0px 0px 9px 0px $gold;
 
+$grey: #d3d3d3;
+
+$black: #292929;
+
 // настройки картинки
 @mixin bg-img-settings {
   background: {
