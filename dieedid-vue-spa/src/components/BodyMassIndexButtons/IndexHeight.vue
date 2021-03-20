@@ -10,8 +10,8 @@
       <span class="index-height__number">{{ height }}</span>
     </div>
     <span class="index-height__unit">см.</span>
-    <div class="wrap">
-      <div class="height__modal" v-if="showModalHeight">
+    <div class="height__position" v-if="showModalHeight">
+      <div class="height__modal">
         <ul class="modal__list">
           <li
             class="modal__list--item"
@@ -90,7 +90,7 @@ export default {
   // text-transform: uppercase;
   font-weight: 700;
 }
-.wrap {
+.height__position {
   background-color: $white;
   border-radius: 10px;
   overflow: hidden;
