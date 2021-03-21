@@ -49,6 +49,14 @@ export default {
     for (let i = 130; i <= 220; i++) {
       this.numbersHeight.push(i);
     }
+
+    document.addEventListener("click", event => {
+      if (
+        !event.target.classList.contains("activity--button", "index-height")
+      ) {
+        this.showModalHeight = false;
+      }
+    });
   }
 };
 </script>
@@ -69,6 +77,7 @@ export default {
 .height__inner {
   display: flex;
   align-items: center;
+  pointer-events: none;
 }
 
 .height__icon {
@@ -87,7 +96,7 @@ export default {
   }
 }
 .index-height__unit {
-  // text-transform: uppercase;
+   pointer-events: none;
   font-weight: 700;
 }
 .height__position {
