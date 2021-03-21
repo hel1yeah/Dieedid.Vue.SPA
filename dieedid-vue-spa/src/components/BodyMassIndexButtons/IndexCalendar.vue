@@ -8,10 +8,10 @@
       <div class="calendar__text-field">{{ date }}</div>
     </div>
 
-    <div class="date-picker__position">
+    <div class="date-picker__position" v-if="menu">
       <v-date-picker
-        v-if="menu"
         v-model="date"
+        :max="maxDate"
         :color="grean"
         :scrollable="true"
         width="250"
@@ -27,6 +27,7 @@ export default {
     return {
       grean: "rgba(13, 168, 71, 1)",
       date: new Date().toISOString().substr(0, 10),
+      maxDate: new Date().toISOString().substr(0, 10),
       menu: false,
       modal: false
     };
@@ -38,8 +39,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-
 .calendar {
   position: relative;
 
@@ -60,6 +59,9 @@ export default {
       fill: $white;
     }
   }
+}
+.calendar__text-field{
+  font-weight: 400;
 }
 .date-picker__position {
   position: absolute;

@@ -44,7 +44,7 @@ export default {
       this.showModalHeight = !this.showModalHeight;
     }
   },
-  created() {
+  mounted() {
     // добавляем рост
     for (let i = 130; i <= 220; i++) {
       this.numbersHeight.push(i);

@@ -12,7 +12,8 @@
       <span class="index-weight__number">{{ weight }}</span>
     </div>
 
-    <span class="index-weight__unit">см.</span>
+    <span class="index-weight__unit">кг.</span>
+
     <div class="weight__position" v-if="showModalWeight">
       <div class="weight__modal">
         <ul class="modal__list">
@@ -21,7 +22,7 @@
             :class="{ 'list__item-active': item === weight }"
             v-for="(item, index) in numberWeight"
             :key="index"
-            @click.stop="itemSelection(item)"
+            @click="itemSelection(item)"
           >
             {{ item }}
           </li>
@@ -43,14 +44,22 @@ export default {
   },
   methods: {
     itemSelection(item) {
-      this.height = item;
-      this.showModalHeight = !this.showModalHeight;
+      this.weight = item;
+      this.showModalWeight = !this.showModalWeight;
+    },
+    closeModal() {
+      this.showModalWeight = false;
     }
   },
-  created() {
+  mounted() {
     for (let i = 40; i <= 200; i++) {
       this.numberWeight.push(i);
     }
+    document.addEventListener("click", event => {
+      if (!event.target.classList.contains("index-weight", "weight__inner")) {
+        this.showModalWeight = false;
+      }
+    });
   }
 };
 </script>
@@ -71,6 +80,7 @@ export default {
 .weight__inner {
   display: flex;
   align-items: center;
+  pointer-events: none;
 }
 
 .weight__icon {
@@ -89,7 +99,7 @@ export default {
   }
 }
 .index-weight__unit {
-  // text-transform: uppercase;
+  pointer-events: none;
   font-weight: 700;
 }
 .weight__position {
