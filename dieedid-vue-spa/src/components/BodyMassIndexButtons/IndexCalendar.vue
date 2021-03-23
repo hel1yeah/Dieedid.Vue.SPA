@@ -32,9 +32,6 @@ export default {
       modal: false
     };
   },
-  methods: {
-    test() {}
-  }
 };
 </script>
 
@@ -60,7 +57,7 @@ export default {
     }
   }
 }
-.calendar__text-field{
+.calendar__text-field {
   font-weight: 400;
 }
 .date-picker__position {

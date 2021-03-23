@@ -56,7 +56,7 @@ export default {
       this.numberWeight.push(i);
     }
     document.addEventListener("click", event => {
-      if (!event.target.classList.contains("index-weight", "weight__inner")) {
+      if (!event.target.classList.contains("index-weight")) {
         this.showModalWeight = false;
       }
     });

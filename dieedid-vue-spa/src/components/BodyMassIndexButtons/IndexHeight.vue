@@ -51,9 +51,7 @@ export default {
     }
 
     document.addEventListener("click", event => {
-      if (
-        !event.target.classList.contains("activity--button", "index-height")
-      ) {
+      if (!event.target.classList.contains("index-height")) {
         this.showModalHeight = false;
       }
     });
@@ -96,7 +94,7 @@ export default {
   }
 }
 .index-height__unit {
-   pointer-events: none;
+  pointer-events: none;
   font-weight: 700;
 }
 .height__position {

@@ -15,6 +15,20 @@
           </div>
           <Help />
         </div>
+        <div class="body-figure">
+          <div class="body-figure__diagram">
+            <span class="body-figure__waight">25.3</span>
+          </div>
+          <div class="body-figure__descr">
+            <img
+              class="body-figure__descr--img"
+              src="@/assets/images/body-figure/inadequate-weight.svg"
+              alt="фигура недостаточный вес"
+            />
+            <div class="body-figure__descr--text">Недостаточный вес</div>
+          </div>
+          <button class="next-button">Далее >></button>
+        </div>
       </div>
     </div>
   </section>
@@ -76,5 +90,67 @@ export default {
   height: 65px;
   padding: 10px;
   margin: 0 100px 0 0;
+}
+
+
+.body-figure {
+  margin: -80px auto 50px;
+  max-width: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.body-figure__diagram {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 15px solid $btn-color;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body-figure__waight {
+  font-family: "Roboto Condensed", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 3rem;
+  color: $yellow;
+}
+.body-figure__descr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 230px;
+}
+.body-figure__descr--img {
+}
+.body-figure__descr--text {
+  font-family: "Roboto Condensed", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.3333rem;
+  line-height: 1.3889rem;
+  max-width: 165px;
+  text-align: left;
+  /* or 104% */
+  color: $white;
+}
+
+.next-button {
+  width: 200px;
+  padding: 14px 17px;
+  background: $btn-color;
+  border-radius: 20px;
+
+  font-family: "Roboto Condensed", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.3333rem;
+  line-height: 1.3889rem;
+  text-align: center;
+
+  color: #ffffff;
 }
 </style>
