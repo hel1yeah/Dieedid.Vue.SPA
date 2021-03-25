@@ -68,6 +68,8 @@ export default {
     font-weight: normal;
 
     text-transform: lowercase;
+
+    box-shadow: 0px 0px 34px 16px rgba(34, 60, 80, 0.2);
     &:first-letter {
       text-transform: uppercase;
     }

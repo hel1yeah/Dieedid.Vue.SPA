@@ -9,7 +9,7 @@ $bg-color: rgba(137, 137, 137, 1);
 
 $gold: rgba(255, 245, 153, 1);
 
-$yellow: rgba(255,231,19,1);
+$yellow: rgba(255, 231, 19, 1);
 
 $white: rgba(255, 255, 255, 1);
 
@@ -21,10 +21,14 @@ $shadow: 0px 0px 9px 0px $gold;
 
 $grey: #d3d3d3;
 
-$black: #292929;
+$black-gray: #292929;
+
+$black: #000000;
+
+$red: rgba(204, 32, 45, 1);
 
 // настройки картинки
-@mixin bg-img-settings {
+  @mixin bg-img-settings {
   background: {
     position: center center;
     size: cover;

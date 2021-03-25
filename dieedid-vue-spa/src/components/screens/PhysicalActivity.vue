@@ -7,7 +7,7 @@
           <Question :description="description" />
         </h2>
         <p class="physical__activity--descr">Исключая тренировки</p>
-        <div class="physical__activity-button--wrapper">
+        <div class="inner-wrapper physical__activity-button--wrapper">
           <ButtonBack />
           <div class="physical__activity--buttons">
             <div
@@ -80,10 +80,6 @@ export default {
   }
 }
 .physical__activity-button--wrapper {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 30px;
-  // margin: 0 0 -40px;
 }
 .physical__activity--buttons {
   width: 800px;

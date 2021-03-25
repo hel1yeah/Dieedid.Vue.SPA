@@ -6,7 +6,7 @@
           Физические нагрузки
           <Question :description="description" />
         </h2>
-        <div class="physical__exercise-button--wrapper">
+        <div class="inner-wrapper physical__exercise-button--wrapper">
           <ButtonBack />
           <div class="physical__exercise--buttons">
             <div
@@ -77,8 +77,5 @@ export default {
   }
 }
 .physical__exercise-button--wrapper {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 30px;
 }
 </style>

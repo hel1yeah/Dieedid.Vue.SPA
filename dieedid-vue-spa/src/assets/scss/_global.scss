@@ -55,3 +55,9 @@ html {
     fill: $white;
   }
 }
+
+.inner-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}

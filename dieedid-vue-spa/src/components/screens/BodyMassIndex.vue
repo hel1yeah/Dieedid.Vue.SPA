@@ -6,7 +6,7 @@
           Индекс массы тела
           <Question :description="description" />
         </h2>
-        <div class="body-mass-index__button__wrapper">
+        <div class="inner-wrapper body-mass-index__button__wrapper">
           <ButtonBack />
           <div class="body-mass-index__button__inner">
             <IndexCalendar />
@@ -74,8 +74,6 @@ export default {
     align-items: center;
   }
   &__button__wrapper {
-    display: flex;
-    justify-content: space-between;
   }
   &__button__inner {
     width: 800px;

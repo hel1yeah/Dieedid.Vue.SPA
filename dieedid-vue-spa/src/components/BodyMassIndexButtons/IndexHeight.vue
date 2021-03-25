@@ -113,7 +113,7 @@ export default {
 }
 
 .modal__list--item {
-  color: $black;
+  color: $black-gray;
   margin: 5px 0;
   list-style-type: none;
   font-size: 1.2rem;
