@@ -193,15 +193,29 @@ export default {
   background: $black;
   border: 1.5px solid $hover-btn-color;
   border-radius: 25px;
-
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-
   padding: 5px;
-
   position: relative;
+
+  cursor: pointer;
+  transition: $transition;
+  &:hover {
+    box-shadow: $shadow;
+    transform: translateY(-5px);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .allergy-product__item--img {
@@ -217,6 +231,7 @@ export default {
   position: absolute;
   top: 11px;
   right: 12px;
+  z-index: 3;
 }
 .choice__true {
   width: 22px;
