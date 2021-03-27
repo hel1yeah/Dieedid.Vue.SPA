@@ -12,12 +12,15 @@
       </div>
       <div class="inner-wrapper allergy__button__wrapper">
         <ButtonBack />
-        <div class="allergy-product">
+        <div class="allergy-product ">
           <div
-            class="allergy-product__item"
+            class="allergy-product__item "
             v-for="(allergy, index) in allergyList"
             :key="index"
+            @click="excludeFood(allergy)"
+            :class="{ 'allergy-product__item--false': allergy.allergy }"
           >
+            <div class="allergy-product__false" v-show="allergy.allergy"></div>
             <img
               class="allergy-product__item--img"
               :src="allergy.img"
@@ -26,11 +29,13 @@
             <span class="allergy-product__item--text">{{ allergy.name }}</span>
             <div class="allergy-product__choice">
               <img
+                v-if="allergy.allergy === false"
                 class="choice__true"
                 src="../../assets/images/allergy/checking-mark-ok.svg"
                 alt="true"
               />
               <img
+                v-if="allergy.allergy"
                 class="choice__false"
                 src="../../assets/images/allergy/cheking-mark-not-ok.svg"
                 alt="false"
@@ -63,7 +68,7 @@ export default {
           img: require("../../assets/images/allergy/smile.svg"),
           name: "нет",
           id: 1,
-          allergy: true
+          allergy: false
         },
         gluten: {
           img: require("../../assets/images/allergy/gluten.svg"),
@@ -74,55 +79,61 @@ export default {
         lactose: {
           img: require("../../assets/images/allergy/lactose.svg"),
           name: "лактоза",
-          id: 1,
-          allergy: true
+          id: 3,
+          allergy: false
         },
         eggs: {
           img: require("../../assets/images/allergy/eggs.svg"),
           name: "яйца",
-          id: 1,
-          allergy: true
+          id: 4,
+          allergy: false
         },
         fish: {
           img: require("../../assets/images/allergy/fish.svg"),
           name: "рыба",
-          id: 1,
-          allergy: true
+          id: 5,
+          allergy: false
         },
         seafood: {
           img: require("../../assets/images/allergy/seafood.svg"),
           name: `море- продукты`,
-          id: 1,
-          allergy: true
+          id: 6,
+          allergy: false
         },
         soy: {
           img: require("../../assets/images/allergy/soy.svg"),
           name: "соя",
-          id: 1,
-          allergy: true
+          id: 7,
+          allergy: false
         },
         cashew: {
           img: require("../../assets/images/allergy/cashew.svg"),
           name: "орехи и сметана",
-          id: 1,
-          allergy: true
+          id: 8,
+          allergy: false
         },
         honey: {
           img: require("../../assets/images/allergy/honey.svg"),
           name: "мёд",
-          id: 1,
-          allergy: true
+          id: 9,
+          allergy: false
         },
         milk: {
           img: require("../../assets/images/allergy/milk.svg"),
           name: "Коровье молоко",
-          id: 1,
-          allergy: true
+          id: 10,
+          allergy: false
         }
       },
+      exclude: [],
       description:
         "Аллергия − это хроническое заболевание, вызванное неадекватной, нежелательной и неожиданной реакцией иммунной системы на воздействие веществ, которые обычно не приводят к заболеванию и не наносят вред человеку, например: на продукты питания, лекарства, пыльцу растений, яд насекомых и др."
     };
+  },
+  methods: {
+    excludeFood(allergy) {
+      allergy.allergy = !allergy.allergy;
+    }
   }
 };
 </script>
@@ -199,23 +210,25 @@ export default {
   justify-content: center;
   padding: 5px;
   position: relative;
-
+  overflow: hidden;
   cursor: pointer;
   transition: $transition;
+
   &:hover {
     box-shadow: $shadow;
     transform: translateY(-5px);
   }
-  &::before {
-    content: "";
+  & .allergy-product__false {
     position: absolute;
-    background-color: #000;
-    opacity: 0.9;
+    background-color: rgba(68, 68, 68, 0.6);
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 102%;
+    height: 102%;
   }
+}
+.allergy-product__item.allergy-product__item--false {
+  border: 1.5px solid $red;
 }
 
 .allergy-product__item--img {
@@ -231,14 +244,13 @@ export default {
   position: absolute;
   top: 11px;
   right: 12px;
-  z-index: 3;
+  z-index: 10;
 }
 .choice__true {
   width: 22px;
   height: 22px;
 }
 .choice__false {
-  display: none;
   width: 22px;
   height: 22px;
 }
