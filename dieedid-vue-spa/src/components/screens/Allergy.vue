@@ -45,23 +45,59 @@
         </div>
         <Help />
       </div>
+
+      <div class="individual-products">
+        <span class="individual-products__text">
+          Исключить отдельные продукты
+        </span>
+        <div class="individual-products__wrapper-selector">
+          <div class="individual-products__selector">
+            <multiselect
+              class="products__selector"
+              v-model="value"
+              :options="options"
+              :hide-selected="true"
+              :multiple="true"
+              :searchable="true"
+              :close-on-select="true"
+              :show-labels="true"
+              :clear-on-select="true"
+              :block-keys="['Tab', 'Enter']"
+              placeholder="Какие продукты исключить ?"
+            ></multiselect>
+          </div>
+          <div class="individual-products__selector-choice"></div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+import Multiselect from "vue-multiselect";
+
 import ButtonBack from "@/components/repeat/ButtonBack.vue";
 import Help from "@/components/repeat/Help.vue";
 import Question from "@/components/repeat/Question.vue";
 export default {
   name: "Allergy",
   components: {
+    Multiselect,
     ButtonBack,
     Help,
     Question
   },
   data() {
     return {
+      value: "",
+      options: [
+        "грецкий орех",
+        "морковь",
+        "мед",
+        "лесной орех",
+        "кокос",
+        "бразильский орех"
+      ],
       allergyList: {
         not: {
           // img: "../../assets/images/allergy/smile.svg",
@@ -230,7 +266,6 @@ export default {
 .allergy-product__item.allergy-product__item--false {
   border: 1.5px solid $red;
 }
-
 .allergy-product__item--img {
   margin: 0 0 15px;
 }
@@ -253,5 +288,87 @@ export default {
 .choice__false {
   width: 22px;
   height: 22px;
+}
+.individual-products__selector {
+}
+.products__selector {
+  text-align: left;
+  color: $black;
+  background-color: $white;
+  max-width: 330px;
+  border-radius: 15px;
+  padding: 10px 0 10px 30px;
+  font-size: 0.8889rem;
+  position: relative;
+  margin: 100px 0;
+}
+
+.multiselect__content-wrapper {
+  position: absolute;
+  margin: 20px 0 0;
+  background-color: $white;
+  border-radius: 15px;
+  z-index: 1;
+  width: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.multiselect__content {
+  width: 100%;
+}
+.multiselect__element {
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  &:hover {
+    background-color: $grey;
+  }
+}
+.multiselect__tags {
+  width: 200px;
+}
+.multiselect__content {
+  align-items: center;
+}
+.multiselect__tags-wrap {
+  position: absolute;
+  top: 0;
+  left: 360px;
+  width: 400px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.multiselect__tag {
+  background-color: $grey;
+  border-radius: 10px;
+  padding: 1px 25px 3px 9px;
+  margin: 5px 0 0 0;
+  position: relative;
+  span{
+    line-height: 10px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: {
+      image: url("./../../assets/images/allergy/cheking-mark-not-ok.svg");
+      position: center center;
+      size: cover;
+      repeat: no-repeat;
+    }
+  }
+}
+
+.multiselect__tag + .multiselect__tag {
+  margin: 5px 0 0 10px;
 }
 </style>
