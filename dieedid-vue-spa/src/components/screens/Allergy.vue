@@ -47,9 +47,9 @@
       </div>
 
       <div class="individual-products">
-        <span class="individual-products__text">
+        <div class="individual-products__text">
           Исключить отдельные продукты
-        </span>
+        </div>
         <div class="individual-products__wrapper-selector">
           <div class="individual-products__selector">
             <multiselect
@@ -58,15 +58,27 @@
               :options="options"
               :hide-selected="true"
               :multiple="true"
-              :searchable="true"
               :close-on-select="true"
-              :show-labels="true"
-              :clear-on-select="true"
-              :block-keys="['Tab', 'Enter']"
+              :searchable="true"
               placeholder="Какие продукты исключить ?"
-            ></multiselect>
+            >
+              <span slot="noResult"> Таких продуктов нету </span>
+            </multiselect>
           </div>
-          <div class="individual-products__selector-choice"></div>
+          <div class="individual-products__selector-choice">
+            <div class="individual-products__tag-wrap">
+              <div
+                class="individual-products__tag"
+                v-for="item in value"
+                :key="item"
+              >
+                <span>
+                  {{ item }}
+                </span>
+                <span> </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -289,18 +301,31 @@ export default {
   width: 22px;
   height: 22px;
 }
+.individual-products {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+.individual-products__text {
+  color: $gold;
+  margin: 0 0 10px 0;
+}
+.individual-products__wrapper-selector {
+  width: 800px;
+  display: flex;
+  align-items: flex-start;
+}
 .individual-products__selector {
+  width: 400px;
 }
 .products__selector {
   text-align: left;
   color: $black;
   background-color: $white;
-  max-width: 330px;
+  width: 330px;
   border-radius: 15px;
-  padding: 10px 0 10px 30px;
+  padding: 10px 30px 10px 30px;
   font-size: 0.8889rem;
-  position: relative;
-  margin: 100px 0;
 }
 
 .multiselect__content-wrapper {
@@ -309,7 +334,7 @@ export default {
   background-color: $white;
   border-radius: 15px;
   z-index: 1;
-  width: 100%;
+  width: 330px;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -319,7 +344,23 @@ export default {
 .multiselect__content {
   width: 100%;
 }
+.multiselect__select {
+}
+.multiselect__input {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 10px;
+  width: 120px;
+  &:active {
+    border: 1px solid olivedrab;
+  }
+}
 .multiselect__element {
+}
+.multiselect__option {
+  display: block;
   text-align: center;
   padding: 10px 0;
   width: 100%;
@@ -327,36 +368,46 @@ export default {
     background-color: $grey;
   }
 }
-.multiselect__tags {
-  width: 200px;
+.multiselect {
+  height: 36px;
+  position: relative;
+}
+
+.multiselect__tag {
+  display: none;
 }
 .multiselect__content {
   align-items: center;
+  width: 330px;
 }
-.multiselect__tags-wrap {
-  position: absolute;
-  top: 0;
-  left: 360px;
+.individual-products__tag-wrap {
   width: 400px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
 }
-.multiselect__tag {
+.individual-products__tag {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  color: $black;
   background-color: $grey;
   border-radius: 10px;
-  padding: 1px 25px 3px 9px;
+  padding: 9px 9px 9px 9px;
   margin: 5px 0 0 0;
   position: relative;
-  span{
-    line-height: 10px;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    right: 8px;
-    top: 5px;
+  line-height: 10px;
+
+  display: flex;
+  align-items: center;
+
+  & span + span {
+    cursor: pointer;
+    display: block;
+    margin: 0 0 0 6px;
+    padding: 3px;
     width: 10px;
     height: 10px;
     background: {
@@ -367,8 +418,7 @@ export default {
     }
   }
 }
-
-.multiselect__tag + .multiselect__tag {
+.individual-products__tag + .individual-products__tag {
   margin: 5px 0 0 10px;
 }
 </style>
