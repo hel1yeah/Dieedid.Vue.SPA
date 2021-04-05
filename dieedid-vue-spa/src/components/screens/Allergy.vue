@@ -45,7 +45,6 @@
         </div>
         <Help />
       </div>
-
       <div class="individual-products">
         <div class="individual-products__text">
           Исключить отдельные продукты
@@ -84,6 +83,9 @@
           </div>
         </div>
       </div>
+      <div class="allergy__button-next-wrapper">
+        <ButtonNext />
+      </div>
     </div>
   </section>
 </template>
@@ -92,6 +94,7 @@
 import Multiselect from "vue-multiselect";
 
 import ButtonBack from "@/components/repeat/ButtonBack.vue";
+import ButtonNext from "@/components/repeat/ButtonNext.vue";
 import Help from "@/components/repeat/Help.vue";
 import Question from "@/components/repeat/Question.vue";
 export default {
@@ -99,6 +102,7 @@ export default {
   components: {
     Multiselect,
     ButtonBack,
+    ButtonNext,
     Help,
     Question
   },
@@ -207,6 +211,7 @@ export default {
 <style lang="scss">
 .allergy {
   text-align: center;
+  margin: 30px 0 60px;
 }
 .allergy__check {
   font-family: "Roboto Condensed", sans-serif;
@@ -330,6 +335,7 @@ export default {
 }
 .individual-products__wrapper-selector {
   width: 800px;
+  margin: 10px 0 20px;
   display: flex;
   align-items: flex-start;
 }
@@ -438,5 +444,12 @@ export default {
 }
 .individual-products__tag + .individual-products__tag {
   margin: 5px 0 0 10px;
+}
+
+.allergy__button-next-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
