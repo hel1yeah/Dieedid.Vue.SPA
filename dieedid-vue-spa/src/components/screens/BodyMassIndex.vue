@@ -27,7 +27,7 @@
             />
             <div class="body-figure__descr--text">Недостаточный вес</div>
           </div>
-          <button class="next-button">Далее >></button>
+          <ButtonNext />
         </div>
       </div>
     </div>
@@ -36,6 +36,7 @@
 
 <script>
 import ButtonBack from "@/components/repeat/ButtonBack.vue";
+import ButtonNext from "@/components/repeat/ButtonNext.vue";
 import Help from "@/components/repeat/Help.vue";
 import Question from "@/components/repeat/Question.vue";
 import IndexCalendar from "@/components/BodyMassIndexButtons/IndexCalendar.vue";
@@ -48,6 +49,7 @@ export default {
     Question,
     Help,
     ButtonBack,
+    ButtonNext,
     IndexCalendar,
     IndexHeight,
     IndexWeight
@@ -89,7 +91,6 @@ export default {
   padding: 10px;
   margin: 0 100px 0 0;
 }
-
 
 .body-figure {
   margin: -80px auto 50px;
@@ -134,21 +135,5 @@ export default {
   text-align: left;
   /* or 104% */
   color: $white;
-}
-
-.next-button {
-  width: 200px;
-  padding: 14px 17px;
-  background: $btn-color;
-  border-radius: 20px;
-
-  font-family: "Roboto Condensed", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.3333rem;
-  line-height: 1.3889rem;
-  text-align: center;
-
-  color: #ffffff;
 }
 </style>
