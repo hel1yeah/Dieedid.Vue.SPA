@@ -61,6 +61,9 @@
               :close-on-select="true"
               :searchable="true"
               placeholder="Какие продукты исключить ?"
+              tag-placeholder="Добавить свой продукт"
+              :taggable="true"
+              @tag="addTag"
             >
               <span slot="noResult"> Таких продуктов нету </span>
             </multiselect>
@@ -75,7 +78,7 @@
                 <span>
                   {{ item }}
                 </span>
-                <span> </span>
+                <span @click="removeTag(item)"></span>
               </div>
             </div>
           </div>
@@ -101,7 +104,7 @@ export default {
   },
   data() {
     return {
-      value: "",
+      value: [],
       options: [
         "грецкий орех",
         "морковь",
@@ -181,6 +184,21 @@ export default {
   methods: {
     excludeFood(allergy) {
       allergy.allergy = !allergy.allergy;
+    },
+    addTag(newTag) {
+      const tag = newTag.toLowerCase().trim();
+      this.options.push(tag);
+      this.value.push(tag);
+    },
+    removeTag(item) {
+      let res = this.value.filter(filtersTags);
+      function filtersTags(elem) {
+        if (elem !== item) {
+          return true;
+        }
+        return false;
+      }
+      this.value = res;
     }
   }
 };
