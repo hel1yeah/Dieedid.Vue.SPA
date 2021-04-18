@@ -37,7 +37,7 @@ export default {
     PhysicalExercise,
     BodyMassIndex,
     Allergy,
-    Objective,
+    Objective
   },
   data() {
     return {
